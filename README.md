@@ -1,16 +1,51 @@
 # block_404
 
-A new Flutter project.
+# Apartment Building Management System Module - Resident Mobile App
+
+## Overview
+
+This mobile app is designed to provide residents of an apartment building with easy access to a variety of management and community features. Built using Flutter, the app offers a seamless and user-friendly experience on both Android and iOS devices.
+
+## Features
+
+- **Announcements**: Stay updated with the latest news and announcements from the building management.
+- **Communication:**
+    * View and respond to announcements from building management.
+    * Send maintenance requests and track their status.
+    * Access building documents and resources.
+- **Community Events**: View and RSVP to upcoming community events.
+- **Billing**: Access billing statements and make payments.
+- **Contacts**: Quick access to fellow residents and building management.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+- Dart SDK: Included with Flutter installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Steps
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/your-repo/apartment-management-app.git
+   cd apartment-management-app
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   flutter pub get
+   ```
+
+3. **Running the App**
+1. **Connect your device or emulator**
+2. **Run the following**
+
+   ```bash
+   flutter pub get
+   ```
+## Author
+
+[Yared Fekade](https://github.com/prulm)
