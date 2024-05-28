@@ -40,12 +40,12 @@ This mobile app is designed to provide residents of an apartment building with e
    ```
 
 3. **Running the App**
-1. **Connect your device or emulator**
-2. **Run the following**
+    1. **Connect your device or emulator**
+    2. **Run the following**
 
-   ```bash
-   flutter pub get
-   ```
+        ```bash
+        flutter pub get
+        ```
 ## Author
 
 [Yared Fekade](https://github.com/prulm)
