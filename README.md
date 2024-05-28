@@ -44,7 +44,7 @@ This mobile app is designed to provide residents of an apartment building with e
     2. **Run the following**
 
         ```bash
-        flutter pub get
+        flutter run
         ```
 ## Author
 
