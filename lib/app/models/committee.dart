@@ -50,7 +50,7 @@ class Committee {
       members: tempMembers,
       leader: User.fromMap(map['leader']),
       building: Building.fromMap(map['building']),
-      committeRules: tempRules,
+      committeeRules: tempRules,
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
