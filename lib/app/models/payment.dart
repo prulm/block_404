@@ -1,21 +1,23 @@
 import 'package:block_404/app/models/user.dart';
 
-class Event {
+class Payment {
   final int id;
-  final String type;
+  final String name;
   final String description;
-  final String attachment;
-  final User createdBy;
-  final DateTime commences;
+  final DateTime deadline;
+  final double? penality;
+  final User collector;
+  final bool isRecurring;
   final DateTime createdAt;
   final DateTime updatedAt;
-  Event({
+  Payment({
     required this.id,
-    required this.type,
+    required this.name,
     required this.description,
-    required this.attachment,
-    required this.createdBy,
-    required this.commences,
+    required this.deadline,
+    required this.penality,
+    required this.collector,
+    required this.isRecurring,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -23,24 +25,26 @@ class Event {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'type': type,
+      'name': name,
       'description': description,
-      'attachment': attachment,
-      'created_by': createdBy,
-      'commences': commences,
+      'deadline': deadline,
+      'penality': penality,
+      'collector': collector,
+      'is_recurring': isRecurring,
       'created_at': createdAt,
       'updated_at': updatedAt,
     };
   }
 
-  factory Event.fromMap(Map<String, dynamic> map) {
-    return Event(
+  factory Payment.fromMap(Map<String, dynamic> map) {
+    return Payment(
       id: map['id'],
-      type: map['type'],
+      name: map['name'],
       description: map['description'],
-      attachment: map['attachment'],
-      createdBy: User.fromMap(map['created_by']),
-      commences: map['commences'],
+      deadline: map['deadline'],
+      penality: map['penality'],
+      collector: User.fromMap(map['collector']),
+      isRecurring: map['is_recurring'],
       createdAt: map['created_at'],
       updatedAt: map['updated_at'],
     );
