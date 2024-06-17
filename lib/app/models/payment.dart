@@ -45,7 +45,7 @@ class Payment {
       penality: map['penality'],
       collector: User.fromMap(map['collector']),
       isRecurring: map['is_recurring'],
-      createdAt: map['created_at'],
+      createdAt: DateTime.parse(map['created_at']),
       updatedAt: map['updated_at'],
     );
   }

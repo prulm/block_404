@@ -45,7 +45,7 @@ class Event {
       penality: map['penality'],
       createdBy: User.fromMap(map['created_by']),
       commences: map['commences'],
-      createdAt: map['created_at'],
+      createdAt: DateTime.parse(map['created_at']),
       updatedAt: map['updated_at'],
     );
   }

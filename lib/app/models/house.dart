@@ -53,7 +53,7 @@ class House {
       pictures: map['pictures'],
       currentResident: User.fromMap(map['current_resident']),
       owner: User.fromMap(map['owner']),
-      createdAt: map['created_at'],
+      createdAt: DateTime.parse(map['created_at']),
       updatedAt: map['updated_at'],
     );
   }

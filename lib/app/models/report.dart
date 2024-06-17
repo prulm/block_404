@@ -35,7 +35,7 @@ class Report {
       description: map['description'],
       attachments: map['attachments'],
       pictures: map['pictures'],
-      createdAt: map['created_at'],
+      createdAt: DateTime.parse(map['created_at']),
       updatedAt: map['updated_at'],
     );
   }

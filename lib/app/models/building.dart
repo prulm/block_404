@@ -47,7 +47,7 @@ class Building {
       floors: map['floors'],
       attachments: map['attachments'],
       pictures: map['pictures'],
-      createdAt: map['created_at'],
+      createdAt: DateTime.parse(map['created_at']),
       updatedAt: map['updated_at'],
     );
   }
