@@ -40,7 +40,7 @@ class _AuthCheckState extends ConsumerState<AuthCheck> {
             );
           } else if (snapshot.hasData) {
             final token = snapshot.data!.getString("token");
-            if (token != null) {
+            if (token == null) {
               return const HomeScreen();
             } else {
               return const LoginScreen();
