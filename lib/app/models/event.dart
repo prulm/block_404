@@ -46,7 +46,7 @@ class Event {
       createdBy: User.fromMap(map['created_by']),
       commences: map['commences'],
       createdAt: DateTime.parse(map['created_at']),
-      updatedAt: map['updated_at'],
+      updatedAt: DateTime.parse(map['updated_at']),
     );
   }
 }

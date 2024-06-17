@@ -32,6 +32,6 @@ class Rule {
         attachment: map['attachmet'],
         picture: map['picture'],
         createdAt: DateTime.parse(map['created_at']),
-        updatedAt: map['updated_at']);
+        updatedAt: DateTime.parse(map['updated_at']));
   }
 }

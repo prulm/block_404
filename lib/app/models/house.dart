@@ -54,7 +54,7 @@ class House {
       currentResident: User.fromMap(map['current_resident']),
       owner: User.fromMap(map['owner']),
       createdAt: DateTime.parse(map['created_at']),
-      updatedAt: map['updated_at'],
+      updatedAt: DateTime.parse(map['updated_at']),
     );
   }
 }

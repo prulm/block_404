@@ -52,7 +52,7 @@ class Committee {
       building: Building.fromMap(map['building']),
       committeRules: tempRules,
       createdAt: DateTime.parse(map['created_at']),
-      updatedAt: map['updated_at'],
+      updatedAt: DateTime.parse(map['updated_at']),
     );
   }
 }
