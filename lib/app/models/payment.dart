@@ -4,8 +4,7 @@ class Event {
   final int id;
   final String type;
   final String description;
-  final String? attachment;
-  final double? penality;
+  final String attachment;
   final User createdBy;
   final DateTime commences;
   final DateTime createdAt;
@@ -15,7 +14,6 @@ class Event {
     required this.type,
     required this.description,
     required this.attachment,
-    required this.penality,
     required this.createdBy,
     required this.commences,
     required this.createdAt,
@@ -28,7 +26,6 @@ class Event {
       'type': type,
       'description': description,
       'attachment': attachment,
-      'penality': penality,
       'created_by': createdBy,
       'commences': commences,
       'created_at': createdAt,
@@ -42,7 +39,6 @@ class Event {
       type: map['type'],
       description: map['description'],
       attachment: map['attachment'],
-      penality: map['penality'],
       createdBy: User.fromMap(map['created_by']),
       commences: map['commences'],
       createdAt: map['created_at'],
