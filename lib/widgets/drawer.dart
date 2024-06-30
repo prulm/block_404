@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:block_404/app/models/user.dart';
 import 'package:block_404/utils/constants.dart';
 import 'package:block_404/utils/dummy.dart';
@@ -25,40 +27,51 @@ class _DrawerMenuState extends ConsumerState<DrawerMenu> {
           Column(
             children: [
               DrawerHeader(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: CircleAvatar(
-                        radius: 30.0,
-                        child: FadeInImage.assetNetwork(
-                          placeholder: profileUrl,
-                          image: user.profilePicture,
-                          fit: BoxFit.cover,
-                          imageErrorBuilder: (context, error, stackTrace) {
-                            return CircleAvatar(
-                              radius: 30.0,
-                              child: Text(
-                                user.firstName[0],
-                                style:
-                                    Theme.of(context).textTheme.displayMedium,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      title: Text(
-                        "${user.firstName} ${user.lastName}",
-                        maxLines: 2,
-                      ),
-                      subtitle: Text(
-                        user.phone,
-                        maxLines: 1,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: const NetworkImage(aptPic),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.5), BlendMode.darken),
+                  ),
+                ),
+                child: Container(
+                  alignment: Alignment.bottomLeft,
+                  padding: EdgeInsets.zero,
+                  child: ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: CircleAvatar(
+                      radius: 30.0,
+                      child: FadeInImage.assetNetwork(
+                        placeholder: profileUrl,
+                        image: user.profilePicture,
+                        fit: BoxFit.cover,
+                        imageErrorBuilder: (context, error, stackTrace) {
+                          return CircleAvatar(
+                            radius: 30.0,
+                            child: Text(
+                              user.firstName[0],
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                          );
+                        },
                       ),
                     ),
-                  ],
+                    title: Text(
+                      "${user.firstName} ${user.lastName}",
+                      maxLines: 2,
+                      style: TextStyle(
+                        color: Theme.of(context).indicatorColor,
+                      ),
+                    ),
+                    subtitle: Text(
+                      user.phone,
+                      maxLines: 1,
+                      style: TextStyle(
+                        color: Theme.of(context).highlightColor,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               ListTile(
