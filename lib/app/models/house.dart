@@ -8,8 +8,9 @@ class House {
   final int bedrooms;
   final List<String> attachments;
   final List<String>? pictures;
-  final User? currentResident;
+  final List<User>? residents;
   final User owner;
+  final bool isHead;
   final DateTime createdAt;
   final DateTime updatedAt;
   House({
@@ -20,8 +21,9 @@ class House {
     required this.bedrooms,
     required this.attachments,
     required this.pictures,
-    required this.currentResident,
+    required this.residents,
     required this.owner,
+    required this.isHead,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -35,7 +37,7 @@ class House {
       'bedrooms': bedrooms,
       'attachments': attachments,
       'pictures': pictures,
-      'current_resident': currentResident,
+      'residents': residents,
       'owner': owner,
       'created_at': createdAt,
       'updated_at': updatedAt,
@@ -43,6 +45,9 @@ class House {
   }
 
   factory House.fromMap(Map<String, dynamic> map) {
+    List<User> tempResidents = [];
+    map['residents'].forEach((user) => tempResidents.add(User.fromMap(user)));
+
     return House(
       id: map['id'],
       note: map['note'],
@@ -51,8 +56,9 @@ class House {
       bedrooms: map['bedrooms'],
       attachments: map['attachmets'],
       pictures: map['pictures'],
-      currentResident: User.fromMap(map['current_resident']),
+      residents: tempResidents,
       owner: User.fromMap(map['owner']),
+      isHead: map['isHead'],
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
