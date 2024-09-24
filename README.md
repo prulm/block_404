@@ -29,8 +29,8 @@ This mobile app is designed to provide residents of an apartment building with e
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/your-repo/apartment-management-app.git
-   cd apartment-management-app
+   git clone https://github.com/prulm/block_404.git
+   cd block_404
    ```
 
 2. **Install Dependencies**:
