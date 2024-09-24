@@ -5,6 +5,7 @@ class Building {
   final Map<String, String> location;
   final int houses;
   final int floors;
+  final String address;
   final List<String>? attachments;
   final List<String>? pictures;
   final DateTime createdAt;
@@ -16,6 +17,7 @@ class Building {
     required this.location,
     required this.houses,
     required this.floors,
+    required this.address,
     required this.attachments,
     required this.pictures,
     required this.createdAt,
@@ -30,6 +32,7 @@ class Building {
       'location': location,
       'houses': houses,
       'floors': floors,
+      'address': address,
       'attachments': attachments,
       'pictures': pictures,
       'created_at': createdAt,
@@ -45,6 +48,7 @@ class Building {
       location: map['location'],
       houses: map['houses'],
       floors: map['floors'],
+      address: map['address'],
       attachments: map['attachments'],
       pictures: map['pictures'],
       createdAt: DateTime.parse(map['created_at']),
