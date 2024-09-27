@@ -41,7 +41,7 @@ class Payment {
       id: map['id'],
       name: map['name'],
       description: map['description'],
-      deadline: map['deadline'],
+      deadline: DateTime.parse(map['deadline']),
       penality: map['penality'],
       collector: User.fromMap(map['collector']),
       isRecurring: map['is_recurring'],

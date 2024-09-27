@@ -2,7 +2,7 @@ import 'package:block_404/app/models/user.dart';
 
 class Event {
   final int id;
-  final String type;
+  final String name;
   final String description;
   final String? attachment;
   final double? penality;
@@ -12,7 +12,7 @@ class Event {
   final DateTime updatedAt;
   Event({
     required this.id,
-    required this.type,
+    required this.name,
     required this.description,
     required this.attachment,
     required this.penality,
@@ -25,7 +25,7 @@ class Event {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'type': type,
+      'name': name,
       'description': description,
       'attachment': attachment,
       'penality': penality,
@@ -39,7 +39,7 @@ class Event {
   factory Event.fromMap(Map<String, dynamic> map) {
     return Event(
       id: map['id'],
-      type: map['type'],
+      name: map['name'],
       description: map['description'],
       attachment: map['attachment'],
       penality: map['penality'],
