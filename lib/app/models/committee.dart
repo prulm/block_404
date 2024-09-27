@@ -1,4 +1,3 @@
-import 'package:block_404/app/models/building.dart';
 import 'package:block_404/app/models/rule.dart';
 import 'package:block_404/app/models/user.dart';
 
@@ -8,7 +7,6 @@ class Committee {
   final String? attachments;
   final List<User> members;
   final User leader;
-  final Building building;
   final List<Rule> committeeRules;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -18,7 +16,6 @@ class Committee {
     required this.attachments,
     required this.members,
     required this.leader,
-    required this.building,
     required this.committeeRules,
     required this.createdAt,
     required this.updatedAt,
@@ -31,7 +28,6 @@ class Committee {
       'attachments': attachments,
       'members': members,
       'leader': leader,
-      'building': building,
       'committee_rules': committeeRules,
       'created_at': createdAt,
       'updated_at': updatedAt,
@@ -49,7 +45,6 @@ class Committee {
       attachments: map['attachments'],
       members: tempMembers,
       leader: User.fromMap(map['leader']),
-      building: Building.fromMap(map['building']),
       committeeRules: tempRules,
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
