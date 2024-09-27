@@ -6,6 +6,7 @@ class Payment {
   final String description;
   final DateTime deadline;
   final double? penality;
+  final double amount;
   final User collector;
   final bool isRecurring;
   final DateTime createdAt;
@@ -16,6 +17,7 @@ class Payment {
     required this.description,
     required this.deadline,
     required this.penality,
+    required this.amount,
     required this.collector,
     required this.isRecurring,
     required this.createdAt,
@@ -29,6 +31,7 @@ class Payment {
       'description': description,
       'deadline': deadline,
       'penality': penality,
+      'amount': amount,
       'collector': collector,
       'is_recurring': isRecurring,
       'created_at': createdAt,
@@ -42,6 +45,7 @@ class Payment {
       name: map['name'],
       description: map['description'],
       deadline: DateTime.parse(map['deadline']),
+      amount: map['amount'],
       penality: map['penality'],
       collector: User.fromMap(map['collector']),
       isRecurring: map['is_recurring'],
