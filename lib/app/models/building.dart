@@ -1,4 +1,5 @@
 import 'package:block_404/app/models/committee.dart';
+import 'package:block_404/app/models/event.dart';
 
 class Building {
   final int id;
@@ -11,6 +12,7 @@ class Building {
   final Committee committee;
   final List<String>? attachments;
   final List<String>? pictures;
+  final List<Event>? events;
   final DateTime createdAt;
   final DateTime updatedAt;
   Building({
@@ -24,6 +26,7 @@ class Building {
     required this.committee,
     required this.attachments,
     required this.pictures,
+    required this.events,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -40,6 +43,7 @@ class Building {
       'committee': committee,
       'attachments': attachments,
       'pictures': pictures,
+      'events': events,
       'created_at': createdAt,
       'updated_at': updatedAt,
     };
@@ -58,6 +62,7 @@ class Building {
       committee: newCommittee,
       attachments: map['attachments'],
       pictures: map['pictures'],
+      events: map['events'],
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
