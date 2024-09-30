@@ -2,7 +2,7 @@ import 'package:block_404/app/models/user.dart';
 
 class House {
   final int id;
-  final String? note;
+  final String? description;
   final int floor;
   final String floorCode;
   final int bedrooms;
@@ -10,12 +10,11 @@ class House {
   final List<String>? pictures;
   final List<User>? residents;
   final User owner;
-  final bool isHead;
   final DateTime createdAt;
   final DateTime updatedAt;
   House({
     required this.id,
-    required this.note,
+    required this.description,
     required this.floor,
     required this.floorCode,
     required this.bedrooms,
@@ -23,7 +22,6 @@ class House {
     required this.pictures,
     required this.residents,
     required this.owner,
-    required this.isHead,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -31,7 +29,7 @@ class House {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'note': note,
+      'description': description,
       'floor': floor,
       'floor_code': floorCode,
       'bedrooms': bedrooms,
@@ -50,15 +48,14 @@ class House {
 
     return House(
       id: map['id'],
-      note: map['note'],
-      floor: map['description'],
+      note: map['description'],
+      floor: map['floor'],
       floorCode: map['floor_code'],
       bedrooms: map['bedrooms'],
       attachments: map['attachmets'],
       pictures: map['pictures'],
       residents: tempResidents,
       owner: User.fromMap(map['owner']),
-      isHead: map['isHead'],
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
