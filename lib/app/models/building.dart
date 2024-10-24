@@ -1,32 +1,33 @@
 import 'package:block_404/app/models/committee.dart';
 import 'package:block_404/app/models/event.dart';
+import 'package:block_404/app/models/house.dart';
 
 class Building {
   final int id;
   final String name;
   final String description;
-  final Map<String, String> location;
-  final int houses;
+  final int housesPerFloor;
   final int floors;
-  final String address;
-  final Committee committee;
+  final String location;
+  final List<Committee> committee;
   final List<String>? attachments;
   final List<String>? pictures;
   final List<Event>? events;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final List<House> houses;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
   Building({
     required this.id,
     required this.name,
     required this.description,
-    required this.location,
-    required this.houses,
+    required this.housesPerFloor,
     required this.floors,
-    required this.address,
+    required this.location,
     required this.committee,
     required this.attachments,
     required this.pictures,
     required this.events,
+    required this.houses,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -39,7 +40,7 @@ class Building {
       'location': location,
       'houses': houses,
       'floors': floors,
-      'address': address,
+      'housesPerFloor': housesPerFloor,
       'committee': committee,
       'attachments': attachments,
       'pictures': pictures,
@@ -50,19 +51,25 @@ class Building {
   }
 
   factory Building.fromMap(Map<String, dynamic> map) {
-    Committee newCommittee = Committee.fromMap(map['committee']);
+    List<Committee> tempCommittee = [];
+    List<House> tempHouse = [];
+    List<Event> tempEvent = [];
+    map['committee'].forEach(
+        (committee) => tempCommittee.add(Committee.fromMap(committee)));
+    map['houses'].forEach((house) => tempHouse.add(House.fromMap(house)));
+    map['events'].forEach((event) => tempEvent.add(Event.fromMap(event)));
     return Building(
       id: map['id'],
       name: map['name'],
       description: map['description'],
       location: map['location'],
-      houses: map['houses'],
+      houses: tempHouse,
       floors: map['floors'],
-      address: map['address'],
-      committee: newCommittee,
+      housesPerFloor: map['housesPerFloor'],
+      committee: tempCommittee,
       attachments: map['attachments'],
       pictures: map['pictures'],
-      events: map['events'],
+      events: tempEvent,
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );

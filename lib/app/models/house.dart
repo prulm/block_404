@@ -48,7 +48,7 @@ class House {
 
     return House(
       id: map['id'],
-      note: map['description'],
+      descripion: map['description'],
       floor: map['floor'],
       floorCode: map['floor_code'],
       bedrooms: map['bedrooms'],
