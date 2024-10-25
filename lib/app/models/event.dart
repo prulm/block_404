@@ -1,12 +1,13 @@
-import 'package:block_404/app/models/user.dart';
+import 'package:block_404/app/models/penality.dart';
+import 'package:block_404/app/models/resident.dart';
 
 class Event {
   final int id;
   final String name;
   final String description;
   final String? attachment;
-  final double? penality;
-  final User createdBy;
+  final Penality penality;
+  final Resident createdBy;
   final DateTime commences;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -29,7 +30,7 @@ class Event {
       'description': description,
       'attachment': attachment,
       'penality': penality,
-      'created_by': createdBy,
+      'creator': createdBy,
       'commences': commences,
       'created_at': createdAt,
       'updated_at': updatedAt,
@@ -43,8 +44,8 @@ class Event {
       description: map['description'],
       attachment: map['attachment'],
       penality: map['penality'],
-      createdBy: User.fromMap(map['created_by']),
-      commences: map['commences'],
+      createdBy: Resident.fromMap(map['creator']),
+      commences: DateTime.parse(map['commences']),
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
