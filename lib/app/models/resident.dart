@@ -1,6 +1,6 @@
 import 'package:block_404/app/models/user.dart';
 
-class House {
+class Resident {
   final int id;
   final User user;
   final bool isHead;
@@ -8,7 +8,7 @@ class House {
   final bool isActive;
   final DateTime createdAt;
   final DateTime updatedAt;
-  House({
+  Resident({
     required this.id,
     required this.user,
     required this.isHead,
@@ -30,8 +30,8 @@ class House {
     };
   }
 
-  factory House.fromMap(Map<String, dynamic> map) {
-    return House(
+  factory Resident.fromMap(Map<String, dynamic> map) {
+    return Resident(
       id: map['id'],
       user: User.fromMap(map['owner']),
       isHead: map['isHead'],
