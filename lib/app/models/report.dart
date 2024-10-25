@@ -1,17 +1,15 @@
 class Report {
   final int id;
-  final String name;
+  final String title;
   final String description;
-  final List<String>? attachments;
-  final List<String>? pictures;
+  final String? file;
   final DateTime createdAt;
   final DateTime updatedAt;
   Report({
     required this.id,
-    required this.name,
+    required this.title,
     required this.description,
-    required this.attachments,
-    required this.pictures,
+    required this.file,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -19,10 +17,9 @@ class Report {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'name': name,
+      'title': title,
       'description': description,
-      'attachments': attachments,
-      'pictures': pictures,
+      'file': file,
       'created_at': createdAt,
       'updated_at': updatedAt,
     };
@@ -31,10 +28,9 @@ class Report {
   factory Report.fromMap(Map<String, dynamic> map) {
     return Report(
       id: map['id'],
-      name: map['name'],
+      title: map['title'],
       description: map['description'],
-      attachments: map['attachments'],
-      pictures: map['pictures'],
+      file: map['file'],
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
