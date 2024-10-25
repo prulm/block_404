@@ -2,11 +2,11 @@ import 'package:block_404/app/models/user.dart';
 
 class House {
   final int id;
-  final String? description;
+  final String description;
   final int floor;
   final String floorCode;
   final int bedrooms;
-  final List<String> attachments;
+  final List<String>? attachments;
   final List<String>? pictures;
   final List<User>? residents;
   final User owner;
@@ -31,7 +31,7 @@ class House {
       'id': id,
       'description': description,
       'floor': floor,
-      'floor_code': floorCode,
+      'floorCode': floorCode,
       'bedrooms': bedrooms,
       'attachments': attachments,
       'pictures': pictures,
@@ -48,9 +48,9 @@ class House {
 
     return House(
       id: map['id'],
-      descripion: map['description'],
+      description: map['description'],
       floor: map['floor'],
-      floorCode: map['floor_code'],
+      floorCode: map['floorCode'],
       bedrooms: map['bedrooms'],
       attachments: map['attachmets'],
       pictures: map['pictures'],
