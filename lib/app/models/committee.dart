@@ -1,3 +1,6 @@
+import 'package:block_404/app/models/committee_attachment.dart';
+import 'package:block_404/app/models/committee_picture.dart';
+import 'package:block_404/app/models/report.dart';
 import 'package:block_404/app/models/rule.dart';
 import 'package:block_404/app/models/user.dart';
 
@@ -5,19 +8,22 @@ class Committee {
   final int id;
   final String name;
   final String description;
-  final String? attachments;
-  final List<User> members;
-  final User leader;
-  final List<Rule> committeeRules;
+  final List<Attachment> attachments;
+  final List<Picture> pictures;
+  final List<Resident> members;
+  final List<Rule> rules;
+  final List<Report> reports;
   final DateTime createdAt;
   final DateTime updatedAt;
   Committee({
     required this.id,
+    required this.name,
     required this.description,
     required this.attachments,
+    required this.pictures,
     required this.members,
-    required this.leader,
-    required this.committeeRules,
+    required this.rules,
+    required this.reports,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -25,11 +31,12 @@ class Committee {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
+      'name': name,
       'description': description,
-      'attachments': attachments,
+      'committee_attachments': attachments,
+      'committee_pictures': pictures,
       'members': members,
-      'leader': leader,
-      'committee_rules': committeeRules,
+      'rules': rules,
       'created_at': createdAt,
       'updated_at': updatedAt,
     };
@@ -38,15 +45,25 @@ class Committee {
   factory Committee.fromMap(Map<String, dynamic> map) {
     List<User> tempMembers = [];
     List<Rule> tempRules = [];
+    List<Attachment> tempAttachments = [];
+    List<Picture> tempPictures = [];
+    List<Report> tempReports = [];
     map['members'].forEach((user) => tempMembers.add(User.fromMap(user)));
-    map['committee_rules'].forEach((rule) => tempRules.add(Rule.fromMap(rule)));
+    map['rules'].forEach((rule) => tempRules.add(Rule.fromMap(rule)));
+    map['attachments'].forEach(
+        (attachment) => tempAttachments.add(Attachment.fromMap(attachment)));
+    map['pictures']
+        .forEach((picture) => tempPictures.add(Picture.fromMap(picture)));
+    map['reports'].forEach((report) => tempReports.add(Report.fromMap(report)));
     return Committee(
       id: map['id'],
+      name: map['name'],
       description: map['description'],
-      attachments: map['attachments'],
+      attachments: tempAttachments,
+      pictures: tempPictures,
       members: tempMembers,
-      leader: User.fromMap(map['leader']),
-      committeeRules: tempRules,
+      rules: tempRules,
+      reports: tempReports,
       createdAt: DateTime.parse(map['created_at']),
       updatedAt: DateTime.parse(map['updated_at']),
     );
