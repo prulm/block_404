@@ -3,6 +3,7 @@ import 'package:block_404/app/models/user.dart';
 
 class Committee {
   final int id;
+  final String name;
   final String description;
   final String? attachments;
   final List<User> members;
