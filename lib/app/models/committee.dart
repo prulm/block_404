@@ -1,8 +1,8 @@
 import 'package:block_404/app/models/committee_attachment.dart';
 import 'package:block_404/app/models/committee_picture.dart';
 import 'package:block_404/app/models/report.dart';
+import 'package:block_404/app/models/resident.dart';
 import 'package:block_404/app/models/rule.dart';
-import 'package:block_404/app/models/user.dart';
 
 class Committee {
   final int id;
@@ -43,12 +43,12 @@ class Committee {
   }
 
   factory Committee.fromMap(Map<String, dynamic> map) {
-    List<User> tempMembers = [];
+    List<Resident> tempMembers = [];
     List<Rule> tempRules = [];
     List<Attachment> tempAttachments = [];
     List<Picture> tempPictures = [];
     List<Report> tempReports = [];
-    map['members'].forEach((user) => tempMembers.add(User.fromMap(user)));
+    map['members'].forEach((resident) => tempMembers.add(Resident.fromMap(resident)));
     map['rules'].forEach((rule) => tempRules.add(Rule.fromMap(rule)));
     map['attachments'].forEach(
         (attachment) => tempAttachments.add(Attachment.fromMap(attachment)));
