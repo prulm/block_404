@@ -13,8 +13,8 @@ class Committee {
   final List<Resident> members;
   final List<Rule> rules;
   final List<Report> reports;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
   Committee({
     required this.id,
     required this.name,
