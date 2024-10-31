@@ -34,6 +34,4 @@ class ThemeProvider with ChangeNotifier {
   }
 }
 
-final themeProvider = ChangeNotifierProvider<ThemeProvider>((ref) {
-  return ThemeProvider();
-});
+final themeProvider = ChangeNotifierProvider<ThemeProvider>((ref) => ThemeProvider());
