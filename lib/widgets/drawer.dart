@@ -21,7 +21,6 @@ class _DrawerMenuState extends ConsumerState<DrawerMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (context, ref, child) {
       final newThemeProvider = ref.watch(themeProvider);
       return Drawer(
         child: Column(
@@ -132,6 +131,5 @@ class _DrawerMenuState extends ConsumerState<DrawerMenu> {
           ],
         ),
       );
-    });
   }
 }

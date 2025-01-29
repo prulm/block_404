@@ -7,7 +7,7 @@ class AuthApiService {
   AuthApiService() : baseUrl = apiUrl;
 
   Future login(String phone, String password) async {
-    return loginApi(baseUrl, phone, password);
+    return loginApi('$baseUrl/auth/jwt/create/', phone, password);
   }
   // Signup
 }

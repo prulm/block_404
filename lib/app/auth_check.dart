@@ -12,10 +12,7 @@ class AuthCheck extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _AuthCheckState();
 }
 
-
-
 class _AuthCheckState extends ConsumerState<AuthCheck> {
-
   void _showToast(String msg, BuildContext context) {
     FlutterToastr.show(
       msg,
@@ -41,9 +38,9 @@ class _AuthCheckState extends ConsumerState<AuthCheck> {
           } else if (snapshot.hasData) {
             final token = snapshot.data!.getString("token");
             if (token == null) {
-              return const HomeScreen();
-            } else {
               return const LoginScreen();
+            } else {
+              return const HomeScreen();
             }
           } else if (snapshot.hasError) {
             _showToast("An error occured", context);

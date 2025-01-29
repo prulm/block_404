@@ -18,6 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: const DrawerMenu(),
+      body: Center(
+        child: Column(
+          children: [
+            TextField()
+          ]
+        )
+      ),
     );
   }
 }

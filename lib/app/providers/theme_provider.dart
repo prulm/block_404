@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ThemeProvider with ChangeNotifier {
+class ThemeNotifier with ChangeNotifier {
   ThemeData _themeData = lightMode;
   bool _isDarkMode = false;
 
-  ThemeProvider() {
+  ThemeNotifier() {
     _loadDarkModeState();
   }
 
@@ -34,4 +34,4 @@ class ThemeProvider with ChangeNotifier {
   }
 }
 
-final themeProvider = ChangeNotifierProvider<ThemeProvider>((ref) => ThemeProvider());
+final themeProvider = ChangeNotifierProvider<ThemeNotifier>((ref) => ThemeNotifier());
