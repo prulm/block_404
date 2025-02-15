@@ -1,6 +1,7 @@
-import 'package:block_404/app/models/token.dart';
 import 'package:block_404/services/auth/auth_api_service.dart';
+import 'package:block_404/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,8 +15,10 @@ final passwordController = TextEditingController();
 final authApiService = AuthApiService();
 
 void login(BuildContext context, phone, password) async {
-  final Token? token = await authApiService.login(phone, password);
-  debugPrint(token?.toString());
+  final res = await authApiService.login(phone, password);
+  if (res) {
+    context.go(PathConst.homePath);
+  }
 }
 
 class _LoginScreenState extends State<LoginScreen> {
