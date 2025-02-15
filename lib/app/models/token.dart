@@ -9,7 +9,12 @@ class Token {
   factory Token.fromMap(Map<String, dynamic> map) {
     return Token(
       access: map['access'],
-      refresh: map['token'],
+      refresh: map['refresh'],
     );
+  }
+
+  @override
+  String toString() {
+    return 'Token(accessToken: $access, refreshToken: $refresh)';
   }
 }

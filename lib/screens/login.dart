@@ -1,3 +1,4 @@
+import 'package:block_404/app/models/token.dart';
 import 'package:block_404/services/auth/auth_api_service.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +13,9 @@ final phoneController = TextEditingController();
 final passwordController = TextEditingController();
 final authApiService = AuthApiService();
 
-void login(BuildContext context, phone, password) {
-  authApiService.login(phone, password);
+void login(BuildContext context, phone, password) async {
+  final Token? token = await authApiService.login(phone, password);
+  debugPrint(token?.toString());
 }
 
 class _LoginScreenState extends State<LoginScreen> {
