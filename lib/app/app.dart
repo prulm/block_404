@@ -15,24 +15,24 @@ class _Block404State extends ConsumerState<Block404> {
   Widget build(BuildContext context) {
     final newThemeProvider = ref.watch(themeProvider);
     return MaterialApp.router(
-        title: 'B-four',
-        debugShowCheckedModeBanner: false,
-        routeInformationParser: router.routeInformationParser,
-        routeInformationProvider: router.routeInformationProvider,
-        routerDelegate: router.routerDelegate,
-        builder: (context, child) {
-          return AnimatedSwitcher(
-            duration: const Duration(seconds: 1),
-            child: child,
-            transitionBuilder: (Widget child, Animation<double> animation) {
-              return FadeTransition(
-                opacity: animation,
-                child: child,
-              );
-            },
-          );
-        },
-        theme: newThemeProvider.themeData,
-      );
+      title: 'B-four',
+      debugShowCheckedModeBanner: false,
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
+      builder: (context, child) {
+        return AnimatedSwitcher(
+          duration: const Duration(seconds: 1),
+          child: child,
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        );
+      },
+      theme: newThemeProvider.themeData,
+    );
   }
 }

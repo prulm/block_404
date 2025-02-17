@@ -97,7 +97,6 @@ class _SettingsState extends ConsumerState<Settings> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings"),
-        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: tiles.length,
@@ -122,18 +121,21 @@ class _SettingsState extends ConsumerState<Settings> {
               }
             },
             trailing: currentTile["trailing"]
-                ? Switch(
-                    value: currentTile["darkMode"] ? darkMode : pushNotf,
-                    onChanged: (value) {
-                      setState(() {
-                        if (currentTile["darkMode"]) {
-                          darkMode = value;
-                          newThemeProvider.toggleTheme();
-                        } else {
-                          pushNotf = value;
-                        }
-                      });
-                    })
+                ? Theme(
+                    data: ThemeData(useMaterial3: false),
+                    child: Switch(
+                        value: currentTile["darkMode"] ? darkMode : pushNotf,
+                        onChanged: (value) {
+                          setState(() {
+                            if (currentTile["darkMode"]) {
+                              darkMode = value;
+                              newThemeProvider.toggleTheme();
+                            } else {
+                              pushNotf = value;
+                            }
+                          });
+                        }),
+                  )
                 : null,
           );
         },
